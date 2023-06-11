@@ -694,11 +694,6 @@ int parse(char *string)
 		params[y] = NULL;
 	}
 
-#ifndef WIN32
-	for(x = y = 0; params[x] && params[x][y]; y++, params[x][y] ? : (x++, y = 0))
-		if(params[x][y] == '\\') params[x][y] = '/';
-#endif
-
 	str2upr(params[0]);
 
 	if (params[1])
